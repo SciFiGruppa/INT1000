@@ -1,0 +1,169 @@
+@charset "utf-8";
+
+body {
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	color: #151515;
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	background-color: #EAEDFF;
+}
+
+/* Main container */
+#wrapper {
+	background-color: #FFFFFF;
+	width: 100%;
+	max-width: 1200px;
+	min-width: 900px;
+	margin-right: auto;
+	margin-left: auto;
+	
+}
+
+/* <h1> in <header> */
+header h1  {
+    position: absolute;
+	font-family: Century Gothic, Helvetica, Verdana, Arial, sans-serif;
+	color: #375BD3;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 40px;
+	text-align: left;
+	text-transform: normal;
+	padding-right: 0px;
+	padding-bottom: 10px;
+	padding-left: 80px;
+	padding-top: 0px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	text-shadow: 0px 3px 2px #000000;
+	margin-bottom: -20px;
+}
+header h3  {
+    position: absolute;
+	font-family: Century Gothic, Helvetica, Verdana, Arial, sans-serif;
+	color: #FFFFFF;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 30px;
+	text-align: left;
+	text-transform: normal;
+	padding-right: 0px;
+	padding-bottom: 10px;
+	padding-left: 150px;
+	padding-top: 45px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	text-shadow: 0px 3px 2px #000000;
+	margin-bottom: -20px;
+}
+
+#banner img {
+	width: 100%;
+}
+
+.header-container {
+    background: url("Bakgrunn.jpg") no-repeat center center;
+    background-size: 117%;
+	line-height: 70%;
+	padding-top: 90px;
+	padding-left: 80px;
+	padding-bottom: 70px;
+    height: 80%;
+	color: #FFFFFF;
+}
+
+.header-container1 {
+    background: url("Bakgrunn.jpg") no-repeat center center;
+    background-size: 117%;
+	line-height: 70%;
+	padding-top: 90px;
+	padding-left: 80px;
+	padding-bottom: 7px;
+    height: 80%;
+	color: #FFFFFF;
+}
+
+.header-container .txt-container {
+    text-align: left;
+    vertical-align: middle;
+}
+
+/* Links in nav */
+a {
+	font-weight: bold;
+	text-decoration: none;
+	color: #FFFFFF;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	padding-top: 1px;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+
+
+/* Contact links */
+#contact {
+	color: #55bada;
+}
+
+/* Navigation */
+#mainnav {
+position: absolute;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+}
+
+/* Horizontal links in nav */
+li {
+    display: inline;
+}
+
+#mainnav {
+    position: absolute;
+	width: 100%;
+	display: block;
+	float: right;
+	text-align: center;
+	padding-top: 30px;
+	padding-left: 150px;
+	padding-bottom: 6px;
+}
+
+#mainnav a:hover, #mainnav a:active, #mainnav a:focus {
+	text-decoration: none;
+	background-color: #FFFFF;
+}
+
+#artikkel {
+	width: 58%;
+	margin-left: 2%;
+	float: left;
+	text-align: left;
+}
+
+#sidebar {
+    padding-top: 60px;
+	width: 34%;
+	margin-left: 4%;
+	float: left;
+}
+
+footer {
+	clear: left;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	padding-left: 2%;
+	background-image: url("Bakgrunn.jpg");
+	color: #DCD8FB;
+	font-style: italic;
+	font-size: small;
+}
