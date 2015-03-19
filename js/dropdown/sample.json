@@ -1,0 +1,10 @@
+{
+    "questionID": 1,
+    "question": "Dette svaret er",
+    "correctAnswerID": 1,
+    "answers": [
+        {"answerID": 1, "desc": "riktig"},
+        {"answerID": 2, "desc": "feil"},
+        {"answerID": 3, "desc": "veita faen"}
+    ]
+}
