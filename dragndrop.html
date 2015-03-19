@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+#div1, #div2, #div3, #div4, #div5
+{clear:both; width:50px; height:50px; margin:10px;padding:10px;border:1px solid #aaaaaa;}
+#flagg {height:54px;}
+</style>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+<script>
+function allowDrop(ev) {
+    ev.preventDefault();
+}
+
+function drag(ev) {
+    ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev) {
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("text");
+    ev.target.appendChild(document.getElementById(data));
+}
+
+function check() {
+	var svar = 0;
+	if($('#div1').find('#drag1').length == 1){ svar++; }
+	if($('#div2').find('#drag2').length == 1){ svar++; }
+	if($('#div3').find('#drag3').length == 1){ svar++; }
+	if($('#div4').find('#drag4').length == 1){ svar++; }
+	if($('#div5').find('#drag5').length == 1){ svar++; }
+
+	if (svar < 3) {
+		var svarsum = ("Ikke bra.. Du har bare " + svar + "/" + "5 riktig");
+	};
+	if (svar >= 3) {
+		var svarsum = ("Du har " + svar + "/" + "5 riktig");
+	};
+	if (svar == 5) {
+		var svarsum = ("Kjempe bra! " + svar + "/" + "5 riktig");
+	};
+	
+
+	document.getElementById("svar").innerHTML = svarsum;
+}
+
+
+</script>
+</head>
+<body>
+<h3>Plasser flaggene på riktig sted.</h3>
+<p id=flagg>
+
+<img src="flagg/A.png" draggable="true" ondragstart="drag(event)" id="drag1" width="50" height="50">
+<img src="flagg/B.png" draggable="true" ondragstart="drag(event)" id="drag2" width="50" height="50">
+<img src="flagg/C.png" draggable="true" ondragstart="drag(event)" id="drag3" width="50" height="50">
+<img src="flagg/D.png" draggable="true" ondragstart="drag(event)" id="drag4" width="50" height="50">
+<img src="flagg/E.png" draggable="true" ondragstart="drag(event)" id="drag5" width="50" height="50">
+</p>
+
+<table>
+	<tr><td>Jeg har dykker nede. Hold godt klar og gå med sakte fart.</td><td><div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td></tr>
+	<tr><td>Jeg laster eller losser eller fører farlig gods.</td><td><div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td></tr>
+	<tr><td>Bekreftende - ja, eller «betydningen av den foregående gruppe skal leses bekreftende».</td><td><div id="div3" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td></tr>
+	<tr><td>Hold klar av meg. Jeg har vanskelig for å manøvrere.</td><td><div id="div4" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td></tr>
+	<tr><td>Jeg forandrer min kurs til styrbord.</td><td><div id="div5" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td></tr>
+	<tr><td><input type="button" value="Reload Page" onClick="window.location.reload()"></td><td align="center"><input type="button" value="Submit" onclick="check()"></td></tr>
+
+</table>
+<p>
+	<a id="svar"></a>
+</p>
+
+
+
+</body>
+</html>
+
