@@ -85,11 +85,11 @@ $result = mysqli_query($con,"SELECT flaggnr, flaggnavn, beskrivelse
                     	$beskrivelse[] = $row['beskrivelse'];
                     }
 
-echo "<img src='flagg/$flaggnavn[0]' draggable='true' ondragstart='drag(event)' id='drag1'>";
-echo "<img src='flagg/$flaggnavn[1]' draggable='true' ondragstart='drag(event)' id='drag2'>";
-echo "<img src='flagg/$flaggnavn[2]' draggable='true' ondragstart='drag(event)' id='drag3'>";
-echo "<img src='flagg/$flaggnavn[3]' draggable='true' ondragstart='drag(event)' id='drag4'>";
-echo "<img src='flagg/$flaggnavn[4]' draggable='true' ondragstart='drag(event)' id='drag5'>";
+echo "<img src='img/flagg/$flaggnavn[0]' draggable='true' ondragstart='drag(event)' id='drag1'>";
+echo "<img src='img/flagg/$flaggnavn[1]' draggable='true' ondragstart='drag(event)' id='drag2'>";
+echo "<img src='img/flagg/$flaggnavn[2]' draggable='true' ondragstart='drag(event)' id='drag3'>";
+echo "<img src='img/flagg/$flaggnavn[3]' draggable='true' ondragstart='drag(event)' id='drag4'>";
+echo "<img src='img/flagg/$flaggnavn[4]' draggable='true' ondragstart='drag(event)' id='drag5'>";
 echo "</p><p>";
 
 echo "<table>";
