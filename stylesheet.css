@@ -150,11 +150,30 @@ li {
 	text-align: left;
 }
 
+#artikkel-flagg {
+	width: 58%;
+	margin-left: 2%;
+	float: left;
+	text-align: Center;
+}
+
 #sidebar {
     padding-top: 60px;
 	width: 34%;
 	margin-left: 4%;
 	float: left;
+}
+
+#sidebar-flagg {
+  width: 180px; 
+  margin: 15px auto; 
+  position: relative;
+}
+
+#page-wrap { 
+ width: 190px; 
+  position: fixed; 
+  margin-left: 390px; 
 }
 
 footer {
