@@ -36,13 +36,38 @@
 			<article id="artikkel">
 				<h2>Sjøveisregler</h2>
 				
-				<p>Velkommen til Båtførerprøven.no! Her har du muligheten til å lære og teste diverse om båt, slik at du stiller sterkest mulig når du befinner deg ute på havet. Vet du hva de diverse flaggene betyr? Kan du grunnlegende kunnskaper når det gjelder å ferdes på havets blå bølger? Lær og test her!</p>
-				<button type="button" id="startQuizButton">Start Quiz</button>
+
+<p> 
+<b>1. Hold til høyre for møtende båt</b> <br>
+Når to motorbåter styrer mot hverandre, skal begge i god tid vike litt til styrbord. Båtene vil da passere hverandre på babord (venstre) side.</p>
+<br>
+<br>
+<br>
+<br>
+<br>
+<p> <b>2. Motorbåt viker for seilbåt</b> <br>
+Når en motorbåt og en seilbåt styrer slik at det er fare for sammenstøt, skal motorbåten vike..</p>
+<br>
+<br>
+<br>
+<br>
+<br>
+<p> <b>3. Motorbåt og seilbåt viker for ferjer og skip</b> <br>
+Når en ferje eller et skip kommer møtende har både motorbåt og seilbåt vikeplikt. Vik på siden av båten, styrbord og babord.</p>
+
+
 			</article>
 			
 			<!-- SIDEBAR -->
 			<aside id="sidebar">
-				<img src="img/lys.jpg" width="356" height="179" title="Båtliv">
+
+
+				<img src="img/animasjon1.gif" width="356" height="179" title="Båtliv">
+				<br>
+				<img src="img/Animasjon2.gif" width="356" height="179" title="Båtliv">
+				<br>
+
+				<img src="img/Animasjon3.gif" width="356" height="179" title="Båtliv">
 				
 			</aside>
 			
