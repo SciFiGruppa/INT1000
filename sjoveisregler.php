@@ -20,7 +20,7 @@
 				<h3>Båtførerprøven</h3> 
 				<nav id="mainnav">
 					<li><a href="index.html">Hjem</a></li>
-					<li><a href="Sjøveisregler.html">Sjøveisregler</a></li>
+					<li><a href="sjoveisregler.php">Sjøveisregler</a></li>
 					<li><a href="Flagg.html">Flagg</a></li>
 				</nav>
 			</header>
@@ -50,6 +50,41 @@
 				<p>Scifigruppa</p>
 			</footer>
 		</div> <!-- end main container -->
-		
+
+		<!-- QUIZ start -->
+		<button type="button" id="startQuizButton">Start Quiz</button>
+
+		<?php require_once("php/DBApi.php"); ?>
+
+		<div id="overlay">
+			<div id="quiz_container">
+
+				<a href="#" id="closeQuiz">Lukk</a>
+				<br>
+				<br>
+
+				<form>
+					<?php
+
+					/* Printing Question HTML */
+					$db = new DBApi();
+					$questions = $db->getQuestions();
+
+					for($i = 0; $i < count($questions); $i++) {
+						$currQ = $questions[$i];
+						print($currQ->getHTML());
+					}
+					?>
+
+					<button type="button" id="checkAnswersButton">Sjekk svar</button>
+				</form>
+
+			</div>
+		</div>
+
+		<script src="js/jquery-1.11.2.js"></script>
+		<script src="js/quiz.js"></script>
+		<!-- QUIZ end -->
+
 	</BODY>
 </HTML>
