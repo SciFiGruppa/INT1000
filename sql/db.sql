@@ -63,6 +63,40 @@ CREATE TABLE IF NOT EXISTS `flagg` (
 -- --------------------------------------------------------
 
 --
+-- Dumping data for table `flagg`
+--
+
+INSERT INTO `flagg` (`flaggnavn`, `beskrivelse`) VALUES
+('A.png', 'Jeg har dykker nede. Hold godt klar og gå med sakte fart.'),
+('B.png', 'Jeg laster eller losser eller fører farlig gods.'),
+('C.png', 'Bekreftende - ja, eller «betydningen av den foregående gruppe skal leses bekreftende».'),
+('D.png', 'Hold klar av meg. Jeg har vanskelig for å manøvrere.'),
+('E.png', 'Jeg forandrer min kurs til styrbord.'),
+('F.png', 'Jeg har havari. Sett deg i forbindelse med meg.'),
+('G.png', 'Jeg trenger los. Når det gis av fiskefartøyer som driver fiske i grupper på fiskefeltet, betyr signalet: Jeg tar inn fiskeredskap.'),
+('H.png', 'Jeg har los ombord.'),
+('I.png', 'Jeg forandrer min kurs til babord.'),
+('J.png', 'Jeg er i brann og har farlig last ombord. Hold godt klar av meg.'),
+('K.png', 'Jeg ønsker å opprette forbindelse med deg.'),
+('L.png', 'Stopp fartøyet øyeblikkelig.'),
+('M.png', 'Mitt fartøy er stoppet og ligger stille.'),
+('N.png', 'Nektende - nei, eller «Betydningen av den foregående gruppe skal leses nektende». Dette signal kan bare gis optisk eller med lyd. Ved tale eller radiosending skal signalet være «NO».'),
+('O.png', 'Mann overbord!'),
+('P.png', 'I havn: Fartøyet skal gå og alle må komme om bord.\r\nI sjøen: Det kan benyttes av fiskefartøyer med følgende betydning: Mine fiskeredskaper har satt seg fast.'),
+('Q.png', 'Det er ikke konstatert smittefare og fartøyet ber om å få lege ombord som kan gi karantenelisens for samkvem med land: "My vessel is healthy and I require free pratique".'),
+('R.png', 'Jeg har mottatt ditt signal.'),
+('S.png', 'Jeg bruker maskinkraften akterover.'),
+('T.png', 'Hold klar av meg. Jeg driver partråling..'),
+('U.png', 'Du stevner mot fare!'),
+('V.png', 'Jeg trenger assistanse.'),
+('W.png', 'Jeg trenger legehjelp.'),
+('X.png', 'Stopp det du holder på med (eller har til hensikt å gjøre) og gi akt på mine signaler.'),
+('Y.png', 'Jeg driver for ankeret.'),
+('Z.png', 'Jeg trenger slepebåt.\r\nNår det gis av fiskefartøyer som driver fiske i grupper på fiskefeltet, betyr signalet: Jeg setter ut fiskeredskap.');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `question`
 --
 

@@ -105,27 +105,19 @@ a {
 	color: #55bada;
 }
 
-/* Navigation */
-#mainnav {
-	position: absolute;
-	margin: 0;
-	padding: 0;
-}
-
 /* Horizontal links in nav */
 li {
     display: inline;
 }
 
 #mainnav {
-    position: absolute;
+	position: absolute;
+	margin: 0;
 	width: 100%;
 	display: block;
 	float: right;
 	text-align: center;
-	padding-top: 30px;
-	padding-left: 150px;
-	padding-bottom: 6px;
+	padding: 0 0 0 0;
 }
 
 #mainnav a:hover, #mainnav a:active, #mainnav a:focus {
