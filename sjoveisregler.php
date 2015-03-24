@@ -1,77 +1,75 @@
 ﻿<!DOCTYPE html>
-<HTML>
-	<HEAD>
+<html>
+
+	<head>
 		<meta charset="UTF-8">
 		<meta name="keywords" content="Science, Fiction, Sci-Fi, SciFi">
-		
-		<link href="stylesheet.css" rel="stylesheet" type="text/css">
-		
-		<title>Båtførerprøven - Home</title>
-	</HEAD>
 
-	<BODY>
-		<!-- MAIN CONTAINER -->
+		<link href="stylesheet.css" rel="stylesheet" type="text/css">
+
+		<title>Båtførerprøven - Home</title>
+	</head>
+
+	<body>
+	<!-- MAIN CONTAINER -->
 		<div id="wrapper">
-		
+
 			<!-- HEADER W. NAVBAR-->
 			<header id="top">
 				<h1>Discover</h1>
 
 				<h3>Båtførerprøven</h3>
 				<nav id="mainnav">
-					<li><a href="index.html">Hjem</a></li>
-					<li><a href="sjoveisregler.php">Sjøveisregler</a></li>
-					<li><a href="Sjøvettsregler.html">Sjøvettsregler</a></li>
-					<li><a href="flagg.php">Flagg</a></li>
-				</nav>
+					<ul>
+						<li><a href="index.html">Hjem</a></li>
+						<li><a href="sjoveisregler.php">Sjøveisregler</a></li>
+						<li><a href="sjovettsregler.html">Sjøvettsregler</a></li>
+						<li><a href="flagg.php">Flagg</a></li>
+					</ul>
 			</header>
-			  
+
 			<!-- BANNER IMAGE -->
-			<div class="header-container1">
-    <div class="txt-container">
-        
-    </div>
-</div>
-			
+			<div class="header-container">
+				<div class="txt-container">
+				</div>
+			</div>
+
 			<!-- ARTICLE -->
 			<article id="artikkel">
 				<h2>Sjøveisregler</h2>
-				
+				<p>
+					<b>1. Hold til høyre for møtende båt</b> <br>
+					Når to motorbåter styrer mot hverandre, skal begge i god tid vike litt til styrbord. Båtene vil da passere hverandre på babord (venstre) side.
+				</p>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<p> <b>2. Motorbåt viker for seilbåt</b> <br>
+					Når en motorbåt og en seilbåt styrer slik at det er fare for sammenstøt, skal motorbåten vike..</p>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<p> <b>3. Motorbåt og seilbåt viker for ferjer og skip</b> <br>
+					Når en ferje eller et skip kommer møtende har både motorbåt og seilbåt vikeplikt. Vik på siden av båten, styrbord og babord.</p>
 
-<p> 
-<b>1. Hold til høyre for møtende båt</b> <br>
-Når to motorbåter styrer mot hverandre, skal begge i god tid vike litt til styrbord. Båtene vil da passere hverandre på babord (venstre) side.</p>
-<br>
-<br>
-<br>
-<br>
-<br>
-<p> <b>2. Motorbåt viker for seilbåt</b> <br>
-Når en motorbåt og en seilbåt styrer slik at det er fare for sammenstøt, skal motorbåten vike..</p>
-<br>
-<br>
-<br>
-<br>
-<br>
-<p> <b>3. Motorbåt og seilbåt viker for ferjer og skip</b> <br>
-Når en ferje eller et skip kommer møtende har både motorbåt og seilbåt vikeplikt. Vik på siden av båten, styrbord og babord.</p>
-
-
+				<br>
+				<br>
+				<button id="startQuizButton">Start Quiz!</button>
 			</article>
-			
+
 			<!-- SIDEBAR -->
 			<aside id="sidebar">
-
-
 				<img src="img/animasjon1.gif" width="356" height="179" title="Båtliv">
 				<br>
 				<img src="img/Animasjon2.gif" width="356" height="179" title="Båtliv">
 				<br>
-
 				<img src="img/Animasjon3.gif" width="356" height="179" title="Båtliv">
-				
 			</aside>
-			
+			<div style="clear: both"></div>
 			<!-- FOOTER -->
 			<footer>
 				<p>Scifigruppa</p>
@@ -110,6 +108,6 @@ Når en ferje eller et skip kommer møtende har både motorbåt og seilbåt vike
 		<script src="js/jquery-1.11.2.js"></script>
 		<script src="js/quiz.js"></script>
 		<!-- QUIZ end -->
+	</body>
 
-	</BODY>
-</HTML>
+</html>

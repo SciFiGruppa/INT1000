@@ -3,8 +3,8 @@
 <?php 
 $servername = "localhost";
 $username = "root";
-$password = "scifi";
-$dbname = "885666";
+$password = "rootpw";
+$dbname = "int";
 
 $con=mysqli_connect($servername, $username, $password, $dbname);
 if (mysqli_connect_errno()) {
@@ -32,11 +32,12 @@ if (mysqli_connect_errno()) {
 
 				<h3>Båtførerprøven</h3>
 				<nav id="mainnav">
-					<li><a href="index.html">Hjem</a></li>
-					<li><a href="sjoveisregler.php">Sjøveisregler</a></li>
-					<li><a href="Sjøvettsregler.html">Sjøvettsregler</a></li>
-					<li><a href="flagg.php">Flagg</a></li>
-				</nav>
+					<ul>
+						<li><a href="index.html">Hjem</a></li>
+						<li><a href="sjoveisregler.php">Sjøveisregler</a></li>
+						<li><a href="sjovettsregler.html">Sjøvettsregler</a></li>
+						<li><a href="flagg.php">Flagg</a></li>
+					</ul>
 			</header>
 			  
 			<!-- BANNER IMAGE -->
