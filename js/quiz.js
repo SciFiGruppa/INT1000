@@ -1,3 +1,5 @@
+/* TODO: @reset, uncheck alle radios */
+
 $(function() {
 
     /* Registering onClick's */

@@ -37,7 +37,8 @@
 				<h2>Sjøveisregler</h2>
 				
 				<p>Velkommen til Båtførerprøven.no! Her har du muligheten til å lære og teste diverse om båt, slik at du stiller sterkest mulig når du befinner deg ute på havet. Vet du hva de diverse flaggene betyr? Kan du grunnlegende kunnskaper når det gjelder å ferdes på havets blå bølger? Lær og test her!</p>
-				</article>
+				<button type="button" id="startQuizButton">Start Quiz</button>
+			</article>
 			
 			<!-- SIDEBAR -->
 			<aside id="sidebar">
@@ -52,8 +53,6 @@
 		</div> <!-- end main container -->
 
 		<!-- QUIZ start -->
-		<button type="button" id="startQuizButton">Start Quiz</button>
-
 		<?php require_once("php/DBApi.php"); ?>
 
 		<div id="overlay">
