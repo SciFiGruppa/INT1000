@@ -32,12 +32,12 @@ class Question {
 
     public function getHTML() {
         $html = $this->question . "<br>";
-
-        for($i = 0; $i < count($this->alternatives); $i++) {
-            $currAlt = $this->alternatives[$i];
+        $last_alternative = end(array_keys($this->alternatives));
+        foreach($this->alternatives as $key => $alternatives) {
+            $currAlt = $alternatives;
             $html .= "<input type='radio' name='$this->id' value='$currAlt'><span id='$this->id;$currAlt'>$currAlt</span>" . "<br>";
 
-            if($i === count($this->alternatives) - 1) {
+            if($last_alternative === $key) {
                 $html .= "<br>";
             }
         }

@@ -77,7 +77,10 @@
 		</div> <!-- end main container -->
 
 		<!-- QUIZ start -->
-		<?php require_once("php/DBApi.php"); ?>
+		<?php 
+			require_once("php/DBApi.php"); 
+			require_once("php/config.php"); 
+		?>
 
 		<div id="overlay">
 			<div id="quiz_container">
@@ -90,11 +93,11 @@
 					<?php
 
 					/* Printing Question HTML */
-					$db = new DBApi();
-					$questions = $db->getQuestions();
+					$db = new DBApi(config());
+					$questions = $db->getQuestions('quiz');
 
-					for($i = 0; $i < count($questions); $i++) {
-						$currQ = $questions[$i];
+					foreach($questions as $key => $questions) {
+						$currQ = $questions;
 						print($currQ->getHTML());
 					}
 					?>
