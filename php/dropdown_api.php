@@ -1,15 +1,17 @@
 <?php
 require_once("DBApi.php");
 
-/* Fetching all questions as JSON */
-$db = new DBApi(config());
-$questions = $db->getQuestions('dropdown');
+if (isset($_POST['submit'])) {
+    
+} else if ($_GET['true']) {
+    /* Fetching all questions as JSON */
+    $db = new DBApi(config());
+    $questions = $db->getQuestions('dropdown');
 
-$questionsAsJson = array();
-for($i = 0; $i < count($questions); $i++) {
-    array_push($questionsAsJson, $questions[$i]->toJSON());
+    $questionsAsJson = array();
+    for($i = 0; $i < count($questions); $i++) {
+        array_push($questionsAsJson, $questions[$i]->toJSON());
+    }
+
+    echo json_encode($questionsAsJson);
 }
-
-//$questionsAsJson = json_encode($questionsAsJson);
-
-echo json_encode($questionsAsJson);

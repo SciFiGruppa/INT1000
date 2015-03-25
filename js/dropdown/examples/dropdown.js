@@ -9,20 +9,25 @@ var dropdown = {
         }
     },
     draw: function (data, options) {
-        var select = document.getElementById(options.selectID),
-            text = document.getElementById(options.textID);
+        var form = document.getElementByClassName(options.mainForm),
+            submit = document.getElementByClassName(options.submit),
+            pattern = /[{0}]/i;
+        for (var i = 0; i < data; i++) {
+            var select = document.createElement("select"),
+                questionText = data[i].question.replace(pattern, select);
+                questionParagraph = document.createElement("p").innerHTML = questionText;
 
-        select.dataset.id = data.questionID;
+            select.name = data[i].id;
 
-        for (var i = 0; i < data.answers.length; i++) {
-            var option = document.createElement("option"),
-                t = document.createTextNode(data.answers[i].desc);
-            option.appendChild(t);
-            option.value = data.answers[i].answerID;
-            select.appendChild(option);
+            for (var key, value in data[i].alternatives) {
+                var option = document.createElement("option").value = key,
+                    textNode = document.createTextNode(value);
+                option.appendChild(textnode);
+                select.appendChild(option);
+            }
+            form.appendChild(select);
         }
-
-        text.innerHTML = data.question;
+        submit.removeAttribute("disabled");
     },
     init: function () {
         var req = this.initAjax(),
@@ -32,7 +37,7 @@ var dropdown = {
         req.onreadystatechange = function () {
             if (req.readyState == 4 && req.status == 200) {
                 var response = JSON.parse(req.responseText);
-                draw({questionID: response.questionID, answers: response.answers, question: response.question}, options);
+                draw(response, options);
             }
         };
         req.send();
@@ -47,7 +52,9 @@ var dropdown = {
             request: "../dropdown_api.php",
             response: ""
         },
-        textID: "quizText",
-        selectID: "quizDropdown"
+        mainForm: "quizDropdown",
+        submit: "submit",
+        textClass: "dropdownSelectText",
+        selectClass: "dropdownSelect"
     }
 }
