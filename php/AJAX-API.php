@@ -2,8 +2,8 @@
 require_once("DBApi.php");
 
 /* Fetching all questions as JSON */
-$db = new DBApi();
-$questions = $db->getQuestions();
+$db = new DBApi(config());
+$questions = $db->getQuestions('quiz');
 
 $questionsAsJson = array();
 for($i = 0; $i < count($questions); $i++) {

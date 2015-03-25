@@ -1,5 +1,6 @@
 <?php
 require_once("Question.php");
+require_once("config.php");
 
 class DBApi {
 
@@ -46,10 +47,6 @@ class DBApi {
         foreach ($this->loopThrough($res) as $qid => $values) {
             $questions[] = new Question($qid, $values['questionText'], $values['correctAnswerID'], $values['answerText']);
         }
-
-        echo '<pre>';
-        var_dump($questions);
-        echo '</pre>';
 
         return $questions;
     }
