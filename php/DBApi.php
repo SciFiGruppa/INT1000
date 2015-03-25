@@ -44,8 +44,8 @@ class DBApi {
 
         $res = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-        foreach ($this->loopThrough($res) as $qid => $values) {
-            $questions[] = new Question($qid, $values['questionText'], $values['correctAnswerID'], $values['answerText']);
+        foreach ($this->loopThrough($res, $type) as $qid => $values) {
+            $questions[] = new Question($qid, $values['questionText'], $values['correctAnswerText'], $values['answerText']);
         }
 
         return $questions;
@@ -54,18 +54,39 @@ class DBApi {
      * cleans an array so it can be instantiated
      * 
      * @param array $result The array returned from the database
+     * @param enum $type 'quiz' or 'dropdown'
      * 
      * @return array Returns the cleaned array so it can easily be used to instantiate the Question class
      */
-    private function loopThrough (array $result) {
+    private function loopThrough (array $result, $type) {
         $output = array();
 
         foreach ($result as $key => $value) {
             $output[$value['questionID']]['questionText'] = $value['questionText'];
-            $output[$value['questionID']]['correctAnswerID'] = $value['correctAnswerID'];
             $output[$value['questionID']]['answerText'][$value['answerID']] = $value['answerText'];
         }
 
+        $sql = "SELECT question.questionID, answer.answerText FROM question
+                INNER JOIN answerquestion ON
+                (
+                    question.questionID = answerquestion.questionID    
+                )
+                INNER JOIN answer ON
+                (
+                    answer.answerID = answerquestion.answerID AND
+                    question.correctAnswerID = answer.answerID AND
+                    question.quizType = :type
+                )";
+
+        $stmt = $this->connection->prepare($sql);
+        $stmt->bindParam(':type', $type);
+        $stmt->execute();
+
+        $res = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        
+        foreach ($res as $key => $value) {
+            $output[$value['questionID']]['correctAnswerText'] = $value['answerText'];
+        }
         return $output;
     }
 
