@@ -56,6 +56,6 @@ class Question {
             "alternatives" => $this->alternatives
         );
 
-        return json_encode($fields);
+        return $fields;
     }
 }

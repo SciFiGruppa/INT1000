@@ -4,4 +4,4 @@
 
     $api = new DBApi(config());
 
-    $api->getQuestions('quiz');
+    $api->getQuestions('dropdown');

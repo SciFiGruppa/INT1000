@@ -24,8 +24,8 @@ var dropdown = {
 
         text.innerHTML = data.question;
     },
-	init: function () {
-		var req = this.initAjax(),
+    init: function () {
+        var req = this.initAjax(),
             draw = this.draw,
             options = this.options;
         req.open('GET', this.options.api.request);
@@ -36,7 +36,7 @@ var dropdown = {
             }
         };
         req.send();
-	},
+    },
     submit: function () {
         var req = this.initAjax();
 
@@ -44,7 +44,7 @@ var dropdown = {
     },
     options: {
         api: {
-            request: "sample.json",
+            request: "../dropdown_api.php",
             response: ""
         },
         textID: "quizText",

@@ -11,7 +11,8 @@ class DBApi {
         $this->connection = new PDO(
                                 "mysql:host={$config['host']};port={$config['port']};dbname={$config['dbname']}",
                                 $config['username'],
-                                $config['password']
+                                $config['password'],
+                                array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8")
                             );
     }
 
@@ -63,6 +64,7 @@ class DBApi {
 
         foreach ($result as $key => $value) {
             $output[$value['questionID']]['questionText'] = $value['questionText'];
+            $output[$value['questionID']]['correctAnswerID'] = $value['correctAnswerID'];
             $output[$value['questionID']]['answerText'][$value['answerID']] = $value['answerText'];
         }
 
@@ -87,6 +89,7 @@ class DBApi {
         foreach ($res as $key => $value) {
             $output[$value['questionID']]['correctAnswerText'] = $value['answerText'];
         }
+
         return $output;
     }
 
