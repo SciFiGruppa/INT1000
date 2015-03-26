@@ -1,10 +1,14 @@
 ﻿<!DOCTYPE html>
 
-<?php 
-$servername = "localhost";
-$username = "root";
-$password = "rootpw";
-$dbname = "int";
+<?php
+require_once("php/config.php");
+// Getting DB Login from config
+$config = config();
+
+$servername = $config['host'];
+$username = $config['username'];
+$password = $config['password'];
+$dbname = $config['dbname'];;
 
 $con=mysqli_connect($servername, $username, $password, $dbname);
 if (mysqli_connect_errno()) {
