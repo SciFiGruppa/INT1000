@@ -24,7 +24,7 @@
 						<li><a href="index.html">Hjem</a></li>
 						<li><a href="sjoveisregler.php">Sjøveisregler</a></li>
 						<li><a href="sjovettsregler.html">Sjøvettsregler</a></li>
-						<li><a href="flagg.php">Flagg</a></li>
+						<li><a href="flagg.html">Flagg</a></li>
 					</ul>
 			</header>
 
