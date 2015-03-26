@@ -9,175 +9,275 @@ $servername = $config['host'];
 $username = $config['username'];
 $password = $config['password'];
 $dbname = $config['dbname'];;
+?>
 
 <HTML>
-	<HEAD>
-		<meta charset="UTF-8">
-		<meta name="keywords" content="Science, Fiction, Sci-Fi, SciFi">
-		
-		<link href="stylesheet.css" rel="stylesheet" type="text/css">
-				<script src="js/jquery-1.11.2.js"></script>
-		<script src="js/dragndrop.js"></script>
-		
-		<title>Båtførerprøven - Home</title>
-	</HEAD>
+<HEAD>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="Science, Fiction, Sci-Fi, SciFi">
 
-	<BODY>
-		<!-- MAIN CONTAINER -->
-		<div id="wrapper">
-		
-			<!-- HEADER W. NAVBAR-->
-			<header id="top">
-				<h1>Discover</h1>
+    <link href="stylesheet.css" rel="stylesheet" type="text/css">
+    <script src="js/jquery-1.11.2.js"></script>
+    <script src="js/dragndrop.js"></script>
 
-				<h3>Båtførerprøven</h3>
-				<nav id="mainnav">
-					<ul>
-						<li><a href="index.html">Hjem</a></li>
-						<li><a href="sjoveisregler.php">Sjøveisregler</a></li>
-						<li><a href="sjovettsregler.html">Sjøvettsregler</a></li>
-						<li><a href="flagg.php">Flagg</a></li>
-					</ul>
-			</header>
-			  
-			<!-- BANNER IMAGE -->
-			<div class="header-container1">
-    <div class="txt-container">
-        
+    <title>Båtførerprøven - Home</title>
+</HEAD>
+
+<BODY>
+<!-- MAIN CONTAINER -->
+<div id="wrapper">
+
+    <!-- HEADER W. NAVBAR-->
+    <header id="top">
+        <h1>Discover</h1>
+
+        <h3>Båtførerprøven</h3>
+        <nav id="mainnav">
+            <ul>
+                <li><a href="index.html">Hjem</a></li>
+                <li><a href="sjoveisregler.php">Sjøveisregler</a></li>
+                <li><a href="sjovettsregler.html">Sjøvettsregler</a></li>
+                <li><a href="flagg.php">Flagg</a></li>
+            </ul>
+    </header>
+
+    <!-- BANNER IMAGE -->
+    <div class="header-container1">
+        <div class="txt-container">
+
+        </div>
     </div>
+
+    <!-- ARTICLE -->
+    <article id="artikkel-flagg">
+        <h2>Flagg</h2>
+
+        <p>Sjølivet består av mye kos og moro, men det er også flere farer ved å begi seg ut på bølgen blå. Kan du
+            betydningen av disse viktige flaggene? </p>
+
+        <h2>Dykkerflagg</h2>
+        <img src="img/flagg/A.png" width="200" height="100" title="Båtliv">
+
+        <p>Er man ute på sjøen og får øye på dette hvite og blå flagget, er det viktig at man senker farten og holder
+            avstand. Dette flagget signaliserer at dykkere befinner seg i vannet, og man er nødt til å være varsom og ta
+            hensyn til nettopp det.
+
+        <p>
+
+
+        <h2>Farlig gods</h2>
+        <img src="img/flagg/B.png" width="200" height="100" title="Båtliv">
+
+        <p>Rød er en farge som er kjent for å signalisere fare. Og dette knallrøde flagget er ikke ett unntak. Ved å
+            heise dette flagget gjør båter som losser eller fører farlig gods omgivelsene rundt bevist på godset, og
+            dermed redusere faren for unødvendig manuvrering som kan utsette den farlige lasten og påføre skade.
+
+        <p>
+
+
+        <h2>Bekreftende ja</h2>
+        <img src="img/flagg/C.png" width="200" height="100" title="Båtliv">
+
+        <P>De rød hvite og blå stripene signaliserer bekreftende til omgivelsene. Enkelt forklart kan man se på flagget
+            som et bekreftende ja.
+
+        <p>
+
+
+        <h2>Hold avstand</h2>
+        <img src="img/flagg/D.png" width="200" height="100" title="Båtliv">
+
+        <p>Viser en båt dette flagget, forteller han at han har vansker med å manøvrere. Det er da best å holde god
+            avstand og ikke gjøre situasjonen farlig eller stressende for den båtføreren som flagger.
+
+        <p>
+
+
+        <h2>Kurs til styrbord</h2>
+        <img src="img/flagg/E.png" width="200" height="100" title="Båtliv">
+
+        <p>En tykk blå stripe over en tykk rød signaliserer at båten bytter kurs mot styrbord.
+
+        <p>
+
+
+        <h2>Havari</h2>
+        <img src="img/flagg/F.png" width="200" height="100" title="Båtliv">
+
+        <P>Jeg har havari. Sett deg i forbindelse med meg
+
+        <P>
+
+        <h2>Jeg trenger los</h2>
+        <img src="img/flagg/G.png" width="200" height="100" title="Båtliv">
+
+        <P>Jeg trenger los. Når det gis av fiskefartøyer som driver fiske i grupper på fiskefeltet, betyr signalet: Jeg
+            tar inn fiskeredskap.
+
+        <P>
+
+        <h2>Los ombord</h2>
+        <img src="img/flagg/H.png" width="200" height="100" title="Båtliv">
+
+        <P>Jeg har los ombord.
+
+        <P>
+
+        <h2>Kurs til babord</h2>
+        <img src="img/flagg/I.png" width="200" height="100" title="Båtliv">
+
+        <P>Jeg forandrer min kurs til babord.
+
+        <P>
+
+        <h2>Brann og farlig last</h2>
+        <img src="img/flagg/J.png" width="200" height="100" title="Båtliv">
+
+        <P>Jeg er i brann og har farlig last ombord. Hold godt klar av meg
+
+        <P>
+
+        <h2>Ønsker forbindelse</h2>
+        <img src="img/flagg/K.png" width="200" height="100" title="Båtliv">
+
+        <P>Jeg ønsker å opprette forbindelse med deg.
+
+        <P>
+
+        <h2>Stopp øyeblikkelig</h2>
+        <img src="img/flagg/L.png" width="200" height="100" title="Båtliv">
+
+        <P>Stopp fartøyet øyeblikkelig.
+
+        <P>
+
+        <h2>Jeg ligger stille</h2>
+        <img src="img/flagg/M.png" width="200" height="100" title="Båtliv">
+
+        <P>Mitt fartøy er stoppet og ligger stille.
+
+        <P>
+
+        <h2>Nektende nei</h2>
+        <img src="img/flagg/N.png" width="200" height="100" title="Båtliv">
+
+        <P>Nektende - nei, eller «Betydningen av den foregående gruppe skal leses nektende». Dette signal kan bare gis
+            optisk eller med lyd. Ved tale eller radiosending skal signalet være «NO».
+
+        <P>
+
+        <h2>Mann overbord!</h2>
+        <img src="img/flagg/O.png" width="200" height="100" title="Båtliv">
+
+        <P>Enkelt og greit, Mann overbord!
+
+        <P>
+
+        <h2>kom om bord/fiskeredskaper sitterfast </h2>
+        <img src="img/flagg/P.png" width="200" height="100" title="Båtliv">
+
+        <P>I havn: Fartøyet skal gå og alle må komme om bord.
+            I sjøen: Det kan benyttes av fiskefartøyer med følgende betydning: Mine fiskeredskaper har satt seg fast.
+
+        <P>
+
+        <h2>Mitt fartøy er friskt</h2>
+        <img src="img/flagg/Q.png" width="200" height="100" title="Båtliv">
+
+        <P>Det er ikke konstatert smittefare og fartøyet ber om å få lege ombord som kan gi karantenelisens for samkvem
+            med land: "My vessel is healthy and I require free pratique".
+
+        <P>
+
+        <h2>Motat ditt signal</h2>
+        <img src="img/flagg/R.png" width="200" height="100" title="Båtliv">
+
+        <P>Jeg har mottatt ditt signal.
+
+        <P>
+
+        <h2>Maskinkraft</h2>
+        <img src="img/flagg/S.png" width="200" height="100" title="Båtliv">
+
+        <P>Jeg bruker maskinkraften akterover.
+
+        <P>
+
+        <h2>Partråling</h2>
+        <img src="img/flagg/T.png" width="200" height="100" title="Båtliv">
+
+        <P>Hold klar av meg. Jeg driver partråling.
+
+        <P>
+
+        <h2>Stevner mot fare</h2>
+        <img src="img/flagg/U.png" width="200" height="100" title="Båtliv">
+
+        <P>Du stevner mot fare!
+
+        <P>
+
+        <h2>Tenger assistance</h2>
+        <img src="img/flagg/V.png" width="200" height="100" title="Båtliv">
+
+        <P>Jeg trenger assistanse.
+
+        <P>
+
+        <h2>Trenger legehjelp</h2>
+        <img src="img/flagg/W.png" width="200" height="100" title="Båtliv">
+
+        <P>Jeg trenger legehjelp
+
+        <P>
+
+        <h2>Stopp det du gjør</h2>
+        <img src="img/flagg/X.png" width="200" height="100" title="Båtliv">
+
+        <P>Stopp det du holder på med (eller har til hensikt å gjøre) og gi akt på mine signaler.
+
+        <P>
+
+        <h2>Anker</h2>
+        <img src="img/flagg/Y.png" width="200" height="100" title="Båtliv">
+
+        <P>Jeg driver for ankeret.
+
+        <P>
+
+        <h2>Trenger slepebåt</h2>
+        <img src="img/flagg/Z.png" width="200" height="100" title="Båtliv">
+
+        <P>Jeg trenger slepebåt.
+            Når det gis av fiskefartøyer som driver fiske i grupper på fiskefeltet, betyr signalet: Jeg setter ut
+            fiskeredskap.
+
+        <P>
+
+    </article>
+
+    <!-- SIDEBAR -->
+    <aside id="sidebar-flagg">
+        <div id="page-wrap">
+            <h2>Test deg selv</h2>
+
+            <p>Føler du deg trygg på de fleste flagg? Se om du kan disse!
+
+            <p>
+                <tr>
+                    <td align="center"><input type="button" value="Submit" onclick="taquiz()"></td>
+                </tr>
+        </div>
+    </aside>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>Scifigruppa</p>
+    </footer>
 </div>
-			
-			<!-- ARTICLE -->
-			<article id="artikkel-flagg">
-				<h2>Flagg</h2>
-				<p>Sjølivet består av mye kos og moro, men det er også flere farer ved å begi seg ut på bølgen blå. Kan du betydningen av disse viktige flaggene?  </p>
-				
-				    <h2>Dykkerflagg</h2>
-                 <img src="img/flagg/A.png" width="200" height="100" title="Båtliv">
-				<p>Er man ute på sjøen og får øye på dette hvite og blå flagget, er det viktig at man senker farten og holder avstand. Dette flagget signaliserer at dykkere befinner seg i vannet, og man er nødt til å være varsom og ta hensyn til nettopp det. <p>
-				
-				
-					<h2>Farlig gods</h2>
-					 <img src="img/flagg/B.png" width="200" height="100" title="Båtliv"> 
-				<p>Rød er en farge som er kjent for å signalisere fare. Og dette knallrøde flagget er ikke ett unntak. Ved å heise dette flagget gjør båter som losser eller fører farlig gods omgivelsene rundt bevist på godset, og dermed redusere faren for unødvendig manuvrering som kan utsette den farlige lasten og påføre skade.  <p>
-				
-				
-					<h2>Bekreftende ja</h2>
-					 <img src="img/flagg/C.png" width="200" height="100" title="Båtliv"> 
-				<P>De rød hvite og blå stripene signaliserer bekreftende til omgivelsene. Enkelt forklart kan man se på flagget som et bekreftende ja.<p>
-				
-				
-					<h2>Hold avstand</h2>
-					 <img src="img/flagg/D.png" width="200" height="100" title="Båtliv">
-				<p>Viser en båt dette flagget, forteller han at han har vansker med å manøvrere. Det er da best å holde god avstand og ikke gjøre situasjonen farlig eller stressende for den båtføreren som flagger.<p>
-			
-				
-					<h2>Kurs til styrbord</h2>
-					 <img src="img/flagg/E.png" width="200" height="100" title="Båtliv"> 
-				<p>En tykk blå stripe over en tykk rød signaliserer at båten bytter kurs mot styrbord.<p>
-				
-				
-					<h2>Havari</h2>
-					 <img src="img/flagg/F.png" width="200" height="100" title="Båtliv">
-				<P>Jeg har havari. Sett deg i forbindelse med meg<P>
-				
-					<h2>Jeg trenger los</h2>
-					 <img src="img/flagg/G.png" width="200" height="100" title="Båtliv">
-				<P>Jeg trenger los. Når det gis av fiskefartøyer som driver fiske i grupper på fiskefeltet, betyr signalet: Jeg tar inn fiskeredskap.<P>
-				
-				<h2>Los ombord</h2>
-					 <img src="img/flagg/H.png" width="200" height="100" title="Båtliv">
-				<P>Jeg har los ombord.<P>
-				
-				<h2>Kurs til babord</h2>
-					 <img src="img/flagg/I.png" width="200" height="100" title="Båtliv">
-				<P>Jeg forandrer min kurs til babord.<P>
-				
-				<h2>Brann og farlig last</h2>
-					 <img src="img/flagg/J.png" width="200" height="100" title="Båtliv">
-				<P>Jeg er i brann og har farlig last ombord. Hold godt klar av meg<P>
-				
-				<h2>Ønsker forbindelse</h2>
-					 <img src="img/flagg/K.png" width="200" height="100" title="Båtliv">
-				<P>Jeg ønsker å opprette forbindelse med deg.<P>
-				
-				<h2>Stopp øyeblikkelig</h2>
-					 <img src="img/flagg/L.png" width="200" height="100" title="Båtliv">
-				<P>Stopp fartøyet øyeblikkelig.<P>
-				<h2>Jeg ligger stille</h2>
-					 <img src="img/flagg/M.png" width="200" height="100" title="Båtliv">
-				<P>Mitt fartøy er stoppet og ligger stille.<P>
-				<h2>Nektende nei</h2>
-					 <img src="img/flagg/N.png" width="200" height="100" title="Båtliv">
-				<P>Nektende - nei, eller «Betydningen av den foregående gruppe skal leses nektende». Dette signal kan bare gis optisk eller med lyd. Ved tale eller radiosending skal signalet være «NO».<P>
-				
-					<h2>Mann overbord!</h2>
-					 <img src="img/flagg/O.png" width="200" height="100" title="Båtliv">
-				<P>Enkelt og greit, Mann overbord!<P>
-				
-				<h2>kom om bord/fiskeredskaper sitterfast </h2>
-					 <img src="img/flagg/P.png" width="200" height="100" title="Båtliv">
-				<P>I havn: Fartøyet skal gå og alle må komme om bord.
-                    I sjøen: Det kan benyttes av fiskefartøyer med følgende betydning: Mine fiskeredskaper har satt seg fast.<P>
-				
-				<h2>Mitt fartøy er friskt</h2>
-					 <img src="img/flagg/Q.png" width="200" height="100" title="Båtliv">
-				<P>Det er ikke konstatert smittefare og fartøyet ber om å få lege ombord som kan gi karantenelisens for samkvem med land: "My vessel is healthy and I require free pratique".<P>
-				
-				<h2>Motat ditt signal</h2>
-					 <img src="img/flagg/R.png" width="200" height="100" title="Båtliv">
-				<P>Jeg har mottatt ditt signal.<P>
-				
-				<h2>Maskinkraft</h2>
-					 <img src="img/flagg/S.png" width="200" height="100" title="Båtliv">
-				<P>Jeg bruker maskinkraften akterover.<P>
-				
-				<h2>Partråling</h2>
-					 <img src="img/flagg/T.png" width="200" height="100" title="Båtliv">
-				<P>Hold klar av meg. Jeg driver partråling.<P>
-				<h2>Stevner mot fare</h2>
-					 <img src="img/flagg/U.png" width="200" height="100" title="Båtliv">
-				<P>Du stevner mot fare!<P>
-				
-				<h2>Tenger assistance</h2>
-					 <img src="img/flagg/V.png" width="200" height="100" title="Båtliv">
-				<P>Jeg trenger assistanse.<P>
-				
-				<h2>Trenger legehjelp</h2>
-					 <img src="img/flagg/W.png" width="200" height="100" title="Båtliv">
-				<P>Jeg trenger legehjelp<P>
-				
-				<h2>Stopp det du gjør</h2>
-					 <img src="img/flagg/X.png" width="200" height="100" title="Båtliv">
-				<P>Stopp det du holder på med (eller har til hensikt å gjøre) og gi akt på mine signaler.<P>
-				
-				<h2>Anker</h2>
-					 <img src="img/flagg/Y.png" width="200" height="100" title="Båtliv">
-				<P>Jeg driver for ankeret.<P>
-				
-				<h2>Trenger slepebåt</h2>
-					 <img src="img/flagg/Z.png" width="200" height="100" title="Båtliv">
-				<P>Jeg trenger slepebåt.
-Når det gis av fiskefartøyer som driver fiske i grupper på fiskefeltet, betyr signalet: Jeg setter ut fiskeredskap.<P>
-				
-				</article>
-			
-			<!-- SIDEBAR -->
-			<aside id="sidebar-flagg">
-				 <div id="page-wrap">
-				<h2>Test deg selv</h2>
-			    <p>Føler du deg trygg på de fleste flagg? Se om du kan disse! <p>
-				<tr><td align="center"><input type="button" value="Submit" onclick="taquiz()"></td></tr>
-				</div>
-			</aside>
-			
-			<!-- FOOTER -->
-			<footer>
-				<p>Scifigruppa</p>
-			</footer>
-		</div> <!-- end main container -->
-		<div id="quiz_container2"></div>
-		<div id="overlay2"></div>
-	</BODY>
+<!-- end main container -->
+<div id="quiz_container2"></div>
+<div id="overlay2"></div>
+</BODY>
 </HTML>
 
