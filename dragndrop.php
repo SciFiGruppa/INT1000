@@ -2,11 +2,14 @@
 <a href="#close" id="btn-close" onClick="closepopup()">×</a>
 <h3>Plasser flaggene riktig sted.</h3>
 
-<?php 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "106241";
+<?php
+require_once("php/config.php");
+$config = config();
+
+$servername = $config['host'];
+$username = $config['username'];
+$password = $config['password'];;
+$dbname = $config['dbname'];
 
 $con=mysqli_connect($servername, $username, $password, $dbname);
 if (mysqli_connect_errno()) { echo "Failed to connect to MySQL: " . mysqli_connect_error();}
