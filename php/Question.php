@@ -9,9 +9,14 @@ class Question {
 
     public function __construct($id, $question, $answer, $alternatives) {
         $this->id = $id;
-        $this->question = $question;
-        $this->answer = $answer;
-        $this->alternatives = $alternatives;
+        $this->question = utf8_encode($question);
+        $this->answer = utf8_encode($answer);
+
+        $utf8Alts = array();
+        foreach($alternatives as $element) {
+            array_push($utf8Alts, utf8_encode($element));
+        }
+        $this->alternatives = $utf8Alts;
     }
 
     public function getID() {
