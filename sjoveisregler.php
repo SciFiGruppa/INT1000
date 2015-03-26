@@ -58,7 +58,10 @@
 
 				<br>
 				<br>
-				<button id="startQuizButton">Start Quiz!</button>
+
+				<div id="startQuizButton" style="border: 2px solid; border-radius: 25px; width: 350px; height: 50px; padding: 6px; text-align: center; vertical-align: middle; line-height: 50px;">
+					Test deg selv, trykk her for å ta quiz!
+				</div>
 			</article>
 
 			<!-- SIDEBAR -->
