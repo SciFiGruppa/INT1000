@@ -1,160 +1,119 @@
-/* SETTINGS */
-var NUM_ALTERNATIVES = 3;
+/* TODO: @reset, uncheck alle radios */
 
-
-/* ########################################### SCRIPT START ########################################### */
-/* Async AJAX getting questions from DB API */
 $(function() {
-    $.ajax({
-        type: 'GET',
-        url: 'api/db_api.php',
-        success: function(questions) {
-            jsonQuestions = JSON.parse(questions);
-            createAndShowQuiz(jsonQuestions);
-        }
-    })
+
+    /* Registering onClick's */
+    $("#startQuizButton").click(onClickStartQuiz);
+    $("#closeQuiz").click(onClickExit);
+    $("#checkAnswersButton").click(onClickCheckAnswers);
+
 });
 
-var questions = [];
-
-/**
- * AJAX 'on success' callback
- */
-function createAndShowQuiz(jsonQuestions) {
-    this.questions = [];
-
-    // Creating Questions and adding them to questions array.
-    for(var i = 0; i < jsonQuestions.length; i++) {
-        var currJson = jsonQuestions[i];
-        questions.push(new Question(currJson.questionID, currJson.question, currJson.answer, currJson.alternatives));
-    }
-
-    $(function() {
-        /* Filling the #quiz_container with quiz form */
-        $("#quiz_container").html(getQuizHTML(questions));
-
-        /* Registering OnClick listener for Check Answers Button */
-        $("#quizButton").click(onClickCheckAnswers);
-    });
-
-}
-/* ########################################### SCRIPT END ########################################### */
-
-
-/**
- * OnClick for check answers button
- */
-var onClickCheckAnswers = function() {
-    // Disabling all radios
-    var allInputs = $(":input");
-    var radios = [];
-    for(var i=0; i < allInputs.length; i++) {
-        if(allInputs[i].type === "radio") {
-            radios.push(allInputs[i]);
-            $(allInputs[i]).attr("disabled", true);
-        }
-    }
-
-    // Disabling button
-    $("#quizButton").attr("disabled", true);
-
-    // Put green color on correct answer text
-    for(var j=0; j < radios.length; j++) {
-        var radioGroup = radios[j].name;
-
-        // Find the corresponding Question object
-        for(var x=0; x < questions; x++) {
-            if(questions[i].getQuestionID() === radioGroup) {
-                if(radios[i].value === questions[x].getAnswer) {
-                    console.log("i has found radio correct");
-                }
-            }
-        }
-    }
-
-
-
-    // I tilegg, hvis brukeren svarte feil, marker svaret hans med rødt.
-    // Vis topptekst som sier "du svarte x/y riktig"
-
+/** OnClick: Start Quiz Button */
+var onClickStartQuiz = function() {
+    $("#overlay").css("visibility", "visible");
 };
 
+/** OnClick: Exit */
+var onClickExit = function() {
+    $("#overlay").css("visibility", "hidden");
+    reset();
+};
+
+/** OnClick: Check Answer Button */
+var onClickCheckAnswers = function() {
+    // AJAX request for retrieving JSON questions
+    $.ajax({
+        type: 'GET',
+        url: 'php/AJAX-API.php',
+        success: function(questions) {
+            onAJAXSuccess(questions);
+        }
+    })
+};
 
 /**
- * Returns the complete quiz form as a string
+ * Resets the quiz
  */
-function getQuizHTML(questions) {
-    var html = "<form>";
+var reset = function() {
+    // Remove CSS from the spans
+    $("#quiz_container span").css({"color": "black", "font-weight": "normal"});
 
-    // Adding the questions HTML
-    for(var i = 0; i < questions.length; i++) {
-        if(i !== 0) {
-            html += "<br>";
-        }
+    // Enable radios & button
+    $("input:radio").attr("disabled", false);
+    $("#checkAnswersButton").attr("disabled", false);
+};
 
-        html += questions[i].getHTML(NUM_ALTERNATIVES);
+/** Shows the results to the user */
+var showQuizResults = function(questions) { // array[questionObject, questionObject]
+
+    if(false === isAllRadioGroupsChecked(questions.length)) {
+        alert("All questions must be answered!");
+        return;
     }
 
-    // Adding the button
-    html += "<br>" + "<button type='button' name='quizButton' id='quizButton' value='quizButton'>Sjekk svar!</button>";
-    html += "</form>";
-    return html;
-}
+    var radios = ($("input:radio"));
+
+    /* Disabling radios & checkAnswerButton */
+    $("input").attr("disabled", true);
+    $("#checkAnswersButton").attr("disabled", true);
+
+    /* Setting correct radios to green */
+    for(var i=0; i < radios.length; i++) {
+        // Find the question corresponding to this radio
+        var currQ = getQuestionById(radios[i].name, questions);
+
+        // Find its span element
+        var radioSpan = getRadioTextSpan(radios[i].name, radios[i].value);
+
+        // Check if this radio is the correct answer
+        if(radios[i].value === currQ.answer) {
+            /* If so, set its text to be green */
+            $(radioSpan).css({"color": "green", "font-weight": "bold"});
+        }
+        // If its not correct, see if its checked
+        else if(radios[i].checked) {
+            // If so, mark it red.
+            $(radioSpan).css({"color": "red"});
+        }
+    }
+};
+
+var isAllRadioGroupsChecked = function(numOfGroups) {
+    var numOfCheckedRadios = $("input:radio:checked").length;
+    return numOfCheckedRadios === numOfGroups;
+};
+
+var getRadioTextSpan = function(radioName, radioValue) {
+    var spans = $("#quiz_container span");
+
+    // Find span with <span id=radioName;radioValue>
+    for(var i=0; i < spans.length; i++) {
+        var currSpan = spans.get(i);
+        if(currSpan.id === radioName + ";" + radioValue) {
+            return currSpan;
+        }
+    }
+};
+
+var getQuestionById = function(radioNameID, questions) {
+    for(var i=0; i < questions.length; i++) {
+        if(questions[i].id === parseInt(radioNameID)) {
+            return questions[i];
+        }
+    }
+    alert("Didnt find the question by id!");
+};
 
 /**
- * Toggles overlay visibility
+ * Parses AJAX response to get a proper array with question objects,
+ * then calls showQuizResults()
  */
-function toggleOverlay() {
-    var overlay = $("#overlay");
-    var state = overlay.css("visibility");
-    overlay.css("visibility", (state === "hidden") ? "visible" : "hidden");
-}
-
-/**
- * OBJECT Question
- */
-var Question = function(questionID, question, answer, alternatives) {
-    this.questionID = questionID;
-    this.question = question;
-    this.answer = answer;
-    this.alternatives = alternatives;
-
-    this.getQuestion = function() {
-        return this.question;
-    };
-
-    this.getAlternatives = function() {
-        return this.alternatives;
-    };
-
-    this.getAnswer = function() {
-        return this.answer;
-    };
-
-    this.getQuestionID = function() {
-        return this.questionID;
-    };
-
-    /**
-     * Gets this questions html for use in the quiz form.
-     * @param numOfAlternatives The number of alternatives shown.
-     * @returns bool|string Returns false if numOfAlternatives is greater than the alternatives.length.
-     */
-    this.getHTML = function(numOfAlternatives) {
-        if(numOfAlternatives > this.getAlternatives().length) {
-            return false;
-        }
-
-        var html = this.getQuestion() + "<br>";
-        for(var i = 0; i < numOfAlternatives; i++) {
-            var alternative =
-                "<input type='radio' name=" + "'" + this.getQuestionID() + "' " +
-                "value=" + "'" + this.alternatives[i] +"'" +
-                ">" + this.alternatives[i];
-
-            html += alternative + "<br>";
-        }
-
-        return html;
-    };
+var onAJAXSuccess = function(questions) {
+    var questionsArray = JSON.parse(questions);
+    var newArray = [];
+    for(var i=0; i < questionsArray.length; i++) {
+        newArray.push(JSON.parse(questionsArray[i]))
+    }
+    showQuizResults(newArray);
 };

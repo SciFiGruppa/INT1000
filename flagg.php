@@ -1,5 +1,14 @@
 ﻿<!DOCTYPE html>
 
+<?php
+require_once("php/config.php");
+// Getting DB Login from config
+$config = config();
+
+$servername = $config['host'];
+$username = $config['username'];
+$password = $config['password'];
+$dbname = $config['dbname'];;
 
 <HTML>
 	<HEAD>
@@ -21,12 +30,14 @@
 			<header id="top">
 				<h1>Discover</h1>
 
-				<h3>Båtførerprøven</h3> 
+				<h3>Båtførerprøven</h3>
 				<nav id="mainnav">
-					<li><a href="index.html">Hjem</a></li>
-					<li><a href="Sjøveisregler.html">Sjøveisregler</a></li>
-					<li><a href="Flagg.html">Flagg</a></li>
-				</nav>
+					<ul>
+						<li><a href="index.html">Hjem</a></li>
+						<li><a href="sjoveisregler.php">Sjøveisregler</a></li>
+						<li><a href="sjovettsregler.html">Sjøvettsregler</a></li>
+						<li><a href="flagg.php">Flagg</a></li>
+					</ul>
 			</header>
 			  
 			<!-- BANNER IMAGE -->
