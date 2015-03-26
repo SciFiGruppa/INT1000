@@ -5,8 +5,8 @@
 <?php 
 $servername = "localhost";
 $username = "root";
-$password = "scifi";
-$dbname = "885666";
+$password = "";
+$dbname = "106241";
 
 $con=mysqli_connect($servername, $username, $password, $dbname);
 if (mysqli_connect_errno()) { echo "Failed to connect to MySQL: " . mysqli_connect_error();}
