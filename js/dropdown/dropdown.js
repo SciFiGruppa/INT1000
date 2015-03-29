@@ -36,9 +36,11 @@ var dropdown = {
             for (var i = 0; i < document.getElementsByClassName(options.mainForm)[0].getElementsByTagName('select').length; i++) {
                 var selectElement = document.getElementsByClassName(options.mainForm)[0].getElementsByTagName('select')[i];
                 if (selectElement.options[selectElement.selectedIndex].text === data[i].answer) {
-                    selectElement.style.borderColor = "green";
+                    selectElement.style.backgroundColor = "green";
+                    selectElement.style.color = "white";
                 } else {
-                    selectElement.style.borderColor = "red";
+                    selectElement.style.backgroundColor = "red";
+                    selectElement.style.color = "white";
                 }
             }
         };
