@@ -78,12 +78,34 @@ Sikkerhet, miljø og trivsel er et felles ansvar.</p>
 				<img src="img/609297-9-1310680447803.jpg"  title="Båtliv">
 				
 			</aside>
+			<div id="overlay">
+			    <div id="dd_quiz">
+			        <a href="#" id="closeQuiz">Lukk</a>
+			        <form method="POST" action="" class="quizDropdown">
+			        </form>
+			    </div>
+    		</div>
+	<button id="testYourself">Test deg selv</button>
 			
 			<!-- FOOTER -->
 			<footer>
 				<p>Scifigruppa</p>
 			</footer>
 		</div> <!-- end main container -->
+
+	<script type="text/javascript" src="js/dropdown/dropdown.js"></script>
+	<script type="text/javascript">
+	    (function () {
+	        document.getElementById('testYourself').onclick = function () {
+	            dropdown.init();
+	            document.getElementById('overlay').style.visibility = "visible";
+	        };
+	        document.getElementById('closeQuiz').onclick = function () {
+	            dropdown.reset();
+	            document.getElementById('overlay').style.visibility = "hidden";
+	        };
+	    })();
+	</script>
 		
 	</BODY>
 </HTML>
