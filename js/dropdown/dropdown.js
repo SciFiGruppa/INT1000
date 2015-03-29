@@ -24,8 +24,8 @@ var dropdown = {
                 option.appendChild(textNode);
                 select.appendChild(option);
             }
-            questionDiv.innerHTML = data[i].question.replace(pattern, select.outerHTML);
             select.name = data[i].id;
+            questionDiv.innerHTML = data[i].question.replace(pattern, select.outerHTML);
             form.appendChild(questionDiv);
         }
         submit.type = "submit";
@@ -33,11 +33,14 @@ var dropdown = {
         submit.id = "dropdownSubmit";
         submit.onclick = function (event) {
             event.preventDefault();
-            var results = [];
             for (var i = 0; i < document.getElementsByClassName(options.mainForm)[0].getElementsByTagName('select').length; i++) {
-                results.push(document.getElementsByClassName(options.mainForm)[0].getElementsByTagName('select')[i].value);
+                var selectElement = document.getElementsByClassName(options.mainForm)[0].getElementsByTagName('select')[i];
+                if (selectElement.options[selectElement.selectedIndex].text === data[i].answer) {
+                    selectElement.style.borderColor = "green";
+                } else {
+                    selectElement.style.borderColor = "red";
+                }
             }
-            dropdown.submit(results);
         };
         console.log(submit);
         form.appendChild(submit);
@@ -51,6 +54,7 @@ var dropdown = {
             if (req.readyState == 4 && req.status == 200) {
                 var response = JSON.parse(req.responseText);
                 draw(response, options);
+                console.log(response);
             }
         };
         req.send();
@@ -59,19 +63,6 @@ var dropdown = {
         var form = document.getElementsByClassName(this.options.mainForm)[0];
 
         form.innerHTML = '';
-    },
-    submit: function (form) {
-        console.log(form);
-        var req = dropdown.initAjax();
-        req.open("POST", dropdown.options.api.response);
-        req.onreadystatechange = function () {
-            if (req.readyState == 4 && req.status == 200) {
-                var response = JSON.parse(req.responseText);
-                console.log(response);
-            }
-        };
-        req.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-        req.send();
     },
     options: {
         api: {
