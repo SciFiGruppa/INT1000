@@ -1,9 +1,7 @@
 <?php
 require_once("DBApi.php");
 
-if (isset($_POST['submit'])) {
-    
-} else if ($_GET['true']) {
+if (isset($_GET['true'])) {
     /* Fetching all questions as JSON */
     $db = new DBApi(config());
     $questions = $db->getQuestions('dropdown');

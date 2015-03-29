@@ -8,15 +8,16 @@ var dropdown = {
             return new ActiveXObject("Microsoft.XMLHTTP");
         }
     },
-    /* faen for et rot */
+    /* rotete */
     draw: function (data, options) {
         var form = document.getElementsByClassName(options.mainForm)[0],
             submit = document.createElement('input'),
             pattern = /\{0\}/i;
-        for (var i = 0; i < 2; i++) {
+        // Go over data object
+        for (var i = 0; i < data.length; i++) {
             var select = document.createElement("select"),
                 questionDiv = document.createElement("p");
-
+            // Every alternative in data object to be filled in option elements
             for (var key in data[i].alternatives) {
                 var option = document.createElement("option"),
                     textNode = document.createTextNode(data[i].alternatives[key]);
@@ -24,25 +25,37 @@ var dropdown = {
                 option.appendChild(textNode);
                 select.appendChild(option);
             }
-            questionDiv.innerHTML = data[i].question.replace(pattern, select.outerHTML);
+            // set name of select element to question id
             select.name = data[i].id;
+            questionDiv.innerHTML = data[i].question.replace(pattern, select.outerHTML);
             form.appendChild(questionDiv);
         }
+        // add properties to input element type submit
         submit.type = "submit";
         submit.value = "Sjekk svar";
         submit.id = "dropdownSubmit";
+        // when submit is clicked
+        // show correct and wrong answers
+        // then disable select element
         submit.onclick = function (event) {
             event.preventDefault();
-            var results = [];
             for (var i = 0; i < document.getElementsByClassName(options.mainForm)[0].getElementsByTagName('select').length; i++) {
-                results.push(document.getElementsByClassName(options.mainForm)[0].getElementsByTagName('select')[i].value);
+                var selectElement = document.getElementsByClassName(options.mainForm)[0].getElementsByTagName('select')[i];
+                if (selectElement.options[selectElement.selectedIndex].text === data[i].answer) {
+                    selectElement.style.backgroundColor = "green";
+                    selectElement.style.color = "white";
+                } else {
+                    selectElement.style.backgroundColor = "red";
+                    selectElement.style.color = "white";
+                }
+                selectElement.disabled = true;
             }
-            dropdown.submit(results);
         };
-        console.log(submit);
+        // add submit button to the form
         form.appendChild(submit);
     },
     init: function () {
+        // get all the question and answer things from the database via ajax
         var req = this.initAjax(),
             draw = this.draw,
             options = this.options;
@@ -56,27 +69,13 @@ var dropdown = {
         req.send();
     },
     reset: function () {
+        // resets the form
         var form = document.getElementsByClassName(this.options.mainForm)[0];
-
         form.innerHTML = '';
-    },
-    submit: function (form) {
-        console.log(form);
-        var req = dropdown.initAjax();
-        req.open("POST", dropdown.options.api.response);
-        req.onreadystatechange = function () {
-            if (req.readyState == 4 && req.status == 200) {
-                var response = JSON.parse(req.responseText);
-                console.log(response);
-            }
-        };
-        req.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-        req.send();
     },
     options: {
         api: {
-            request: "../dropdown_api.php?true=true",
-            response: "../dropdown_api.php"
+            request: "php/dropdown_api.php?true=true"
         },
         mainForm: "quizDropdown",
         submit: "submit",
